@@ -16,6 +16,7 @@ public class ProfitDemo {
 		double bonus ;
 		
 		char ch;
+		double commission;
 		Employee[] em = new Employee [2] ;
 		Salary[] sa = new Salary [2];
 		do {
@@ -31,15 +32,21 @@ public class ProfitDemo {
 				System.out.println("Monthly sales : ") ;
 				sales = sc.nextDouble();
 				
-				if (sales<=50000) {
+				if (sales<=25000) {
 					profit = (0.01*sales) ;
-				} else if (sales>=50001 && sales<=100000) {
+				} else if (sales>=25001 && sales<=50000) {
 					profit = (0.02*sales);
-				} else if (sales > 100001) {
+				} else if (sales > 50001) {
 					profit = (0.03*sales) ;
 				}
 				sa[i] = new Salary (salary,profit); 
+				commission = salary+profit;
 				
+				if(commission<18000) {
+					commission=18000;
+					sa[i].setSalary(commission);
+					
+				}
 			}
 			for (int i=0;i<em.length;i++) 
 				System.out.println(em[i].getName() +" and bonus : " +sa[i].toString()+ " baht ");
