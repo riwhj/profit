@@ -28,10 +28,7 @@ public class Salary {
 
 	@Override
 	public String toString() {
-		return "Salary [salary=" + salary + ", comisstion=" + comisstion + "]";
+		return "Salary " +(salary+comisstion);
 	}
 	
-	
-	
-
 }
